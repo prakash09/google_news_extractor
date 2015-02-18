@@ -7,11 +7,6 @@ def search():
 	final_url = ('https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q='+query+'&userip=INSERT-USER-IP')
 	json_obj=urllib2.urlopen(final_url)
 	data=json.load(json_obj)
-	for news1 in data['responseData']['results']:
-		news1['titleNoFormatting']= HTMLParser.HTMLParser().unescape(news1['titleNoFormatting'])
-		if  'relatedStories' in locals():
-			for news2 in news1['relatedStories']:
-				news2['titleNoFormatting']=HTMLParser.HTMLParser().unescape(news2['titleNoFormatting'])
 	send_email(data)
 def send_email(data):
 	FROM = "sender@example.com"
