@@ -1,7 +1,7 @@
 import urllib2
 import smtplib
 import json
-import HTMLParser
+#import HTMLParser
 def search():
 	query='Delhi'
 	final_url = ('https://ajax.googleapis.com/ajax/services/search/news?v=1.0&q='+query+'&userip=INSERT-USER-IP')
